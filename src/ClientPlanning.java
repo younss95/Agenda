@@ -1,3 +1,5 @@
+import classes.*;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
@@ -29,14 +31,14 @@ public class ClientPlanning implements ConstantesErreur {
 
             }
 
-            //Reservation res1 = new Reservation(new Date(10, 10, 2000), new PlageHoraire(new Horaire(20, 21), new Horaire(22, 24)), "Test1");
-            //Reservation res2 = new Reservation(new Date(10, 10, 2000), new PlageHoraire(new Horaire(18, 20), new Horaire(21, 22)), "Test2");
-            //Reservation res3 = new Reservation(new Date(11, 10, 2000), new PlageHoraire(new Horaire(20, 21), new Horaire(22, 24)), "Test1");
+            //classes.Reservation res1 = new classes.Reservation(new classes.Date(10, 10, 2000), new classes.PlageHoraire(new classes.Horaire(20, 21), new classes.Horaire(22, 24)), "Test1");
+            //classes.Reservation res2 = new classes.Reservation(new classes.Date(10, 10, 2000), new classes.PlageHoraire(new classes.Horaire(18, 20), new classes.Horaire(21, 22)), "Test2");
+            //classes.Reservation res3 = new classes.Reservation(new classes.Date(11, 10, 2000), new classes.PlageHoraire(new classes.Horaire(20, 21), new classes.Horaire(22, 24)), "Test1");
 
             //System.out.println(res1.compareTo(res2));
 
-            //Planning planningTest1 = new Planning(4);
-            //Planning planningTest2 = new Planning(6);
+            //classes.Planning planningTest1 = new classes.Planning(4);
+            //classes.Planning planningTest2 = new classes.Planning(6);
 
             /*planningTest2.ajout(res1);
             planningTest1.ajout(res2);
@@ -66,11 +68,11 @@ public class ClientPlanning implements ConstantesErreur {
 
             /*
             if (parExc.getChCodeErreur()==0)
-                System.out.println("Reservation non valide");
+                System.out.println("classes.Reservation non valide");
             if (parExc.getChCodeErreur()==1)
-                System.out.println("Planning plein");
+                System.out.println("classes.Planning plein");
             if (parExc.getChCodeErreur()==2)
-                System.out.println("Reservation incompatible");
+                System.out.println("classes.Reservation incompatible");
 
              */
 
