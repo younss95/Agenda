@@ -1,3 +1,5 @@
+package classes;
+
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -26,8 +28,8 @@ public class Date {
     public static int lastJour(int parMois, int parAnnee){
         switch(parMois){
             case 2: if (Date.isbissextile(parAnnee))
-                return 28;
-            return 29;
+                return 29;
+            return 28;
 
             case 4: case 6: case 9: case 11: return 30;
             default:return 31;
@@ -71,19 +73,19 @@ public class Date {
 
     public int compareTo (Date parDate){
         if (this.chAnnee < parDate.chAnnee)
-              return -5;
+            return -1;
         if (this.chAnnee > parDate.chAnnee)
-            return 8;
+            return 1;
 
         if (this.chMois < parDate.chMois)
-            return -5;
+            return -1;
         if (this.chMois > parDate.chMois)
-            return 8;
+            return 1;
 
         if (this.chJour < parDate.chJour)
-            return -5;
+            return -1;
         if (this.chJour > parDate.chJour)
-            return 8;
+            return 1;
 
         return 0;
     }
@@ -108,15 +110,19 @@ public class Date {
      * Si le mois est supérieur à 1 alors on enleve 1 au mois
      * @return
      */
-    public Date dateDeLaVielle(){
-        if (chJour > 1)
+    public Date dateDeLaVielle() {
+        if (chJour > 1) {
             return new Date(chJour - 1, chMois, chAnnee);
+        }
 
-        if (chMois > 1)
-            return new Date(lastJour(chMois-1,chAnnee), chMois - 1, chAnnee);
+        if (chMois > 1) {
+            return new Date(lastJour(chMois - 1, chAnnee), chMois - 1, chAnnee);
+        }
 
-        return new Date(31,12,chAnnee - 1);
+        // Si on est le 1er janvier, on retourne le 31 décembre de l'année précédente
+        return new Date(31, 12, chAnnee - 1);
     }
+
 
     public int getWeekOfYear(){
         Calendar date = Calendar.getInstance();

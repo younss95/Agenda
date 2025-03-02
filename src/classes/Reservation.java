@@ -1,14 +1,22 @@
+package classes;
+
 public class Reservation implements Comparable<Reservation>{
     private Date date;
     private PlageHoraire plage;
     private String intitule;
 
-    public Reservation(Date parDate,PlageHoraire parHoraire,String intitule) throws ExceptionPlanning{
-        if(!parDate.isValable() || !parHoraire.estValide())
+    public Reservation(Date date, PlageHoraire plageHoraire, String description) throws ExceptionPlanning {
+        if (date == null || plageHoraire == null || description == null) {
+            System.out.println("Erreur : paramètre invalide détecté !");
             throw new ExceptionPlanning(0);
-        this.date=parDate;
-        this.plage=parHoraire;
-        this.intitule=intitule;
+        }
+        this.date = date;
+        this.plage = plageHoraire;
+        this.intitule = description;
+    }
+
+
+    public Reservation(java.util.Date date, String client1) {
     }
 
     /**
